@@ -1,5 +1,7 @@
 # Dashboard Analisa Performa Salesman — Distrilink SAP
 
+**Live Demo:** [Kunjungi Dashboard Distrilink SAP di sini](dasbor-sales-testcase.vercel.app)
+
 Purwarupa dashboard untuk supervisor SAP memantau performa harian tim sales: efektivitas kunjungan, total order, dan pesanan yang gagal karena stok kosong (OOS). Dibuat untuk test case Frontend Web seleksi magang.
 
 ## Tech Stack
@@ -25,7 +27,7 @@ src/
 │   ├── login/page.tsx    # halaman login + integrasi API
 │   └── dasbor/page.tsx   # halaman dashboard utama
 ├── components/
-│   ├── PeringatanError.tsx   # alert untuk error 
+│   ├── PeringatanError.tsx   # alert untuk error
 │   ├── HeaderDasbor.tsx      # header + info user + tombol logout
 │   ├── KartuRingkasan.tsx    # 3 summary cards
 │   ├── GrafikEfektivitas.tsx # bar chart efektivitas
@@ -44,17 +46,20 @@ src/
 Pastikan Anda telah menginstal [Node.js](https://nodejs.org/) (versi 18.x atau terbaru) di sistem Anda.
 
 1. **Kloning Repositori:**
+
    ```bash
-   git clone https://github.com/arexsxx/dasbor-sales-testcase.git
-   cd dasbor-sales-testcase
+   git clone https://github.com/arexsxx/ErvinKhoirus_FrontendWeb_TestCase.git
+   cd ErvinKhoirus_FrontendWeb_TestCase
    ```
 
 2. **Instalasi Dependensi:**
+
    ```bash
    npm install
    ```
 
 3. **Jalankan Server Lokal:**
+
    ```bash
    npm run dev
    ```
@@ -75,3 +80,5 @@ Pastikan Anda telah menginstal [Node.js](https://nodejs.org/) (versi 18.x atau t
 - Token disimpan di `localStorage`, sesuai ketentuan soal
 - Data sales pakai JSON statis lokal (`src/data/dataPenjualan.json`) sesuai dataset di soal, bukan dari API, karena datanya memang spesifik untuk studi kasus ini
 - Field `kunjungan_unplanned` yang disebut di deskripsi field pada soal sengaja tidak dipakai — field ini tidak ada di dataset contoh dan tidak dibutuhkan rumus/tugas manapun
+
+## Live Demo
