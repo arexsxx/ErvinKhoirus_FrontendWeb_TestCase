@@ -152,12 +152,6 @@ export default function HalamanLogin() {
           </Button>
         </form>
 
-        <p className="text-xs text-slate-400 mt-6 text-center leading-relaxed">
-          Akun contoh untuk uji coba:{" "}
-          <span className="font-semibold text-slate-500">emilys</span> /{" "}
-          <span className="font-semibold text-slate-500">emilyspass</span>
-        </p>
-
         <p className="text-xs text-slate-400 mt-4 text-center leading-relaxed">
           Dashboard Analisa Performa Salesman{" "}
           <span className="font-semibold text-slate-500">Distrilink SAP</span>.
