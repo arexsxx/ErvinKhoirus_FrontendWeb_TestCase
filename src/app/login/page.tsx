@@ -40,10 +40,7 @@ export default function HalamanLogin() {
       const data = await respons.json();
 
       if (!respons.ok) {
-        throw new Error(
-          data.message ||
-            "Kredensial tidak valid. Periksa kembali username dan password Anda.",
-        );
+        throw new Error(data.message || "Invalid credentials");
       }
 
       localStorage.setItem("accessToken", data.accessToken);
@@ -88,7 +85,16 @@ export default function HalamanLogin() {
         </div>
 
         <form onSubmit={handleLogin} className="w-full flex flex-col gap-5">
-          <PeringatanError pesan={pesanError} />
+          {pesanError && (
+            <div className="flex flex-col gap-1.5 -mb-2">
+              <PeringatanError pesan={pesanError} />
+              {pesanError === "Invalid credentials" && (
+                <p className="text-xs text-red-500 font-semibold px-2">
+                  *pastikan username & password yang anda masukkan benar.
+                </p>
+              )}
+            </div>
+          )}
 
           <div className="space-y-2.5">
             <Label

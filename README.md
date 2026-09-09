@@ -1,6 +1,6 @@
 # Dashboard Analisa Performa Salesman — Distrilink SAP
 
-**Live Demo:** [Kunjungi Dashboard Distrilink SAP di sini](dasbor-sales-testcase.vercel.app)
+**Live Demo:** [Kunjungi Dashboard Distrilink SAP di sini](https://dasbor-sales-testcase.vercel.app)
 
 Purwarupa dashboard untuk supervisor SAP memantau performa harian tim sales: efektivitas kunjungan, total order, dan pesanan yang gagal karena stok kosong (OOS). Dibuat untuk test case Frontend Web seleksi magang.
 
@@ -81,4 +81,3 @@ Pastikan Anda telah menginstal [Node.js](https://nodejs.org/) (versi 18.x atau t
 - Data sales pakai JSON statis lokal (`src/data/dataPenjualan.json`) sesuai dataset di soal, bukan dari API, karena datanya memang spesifik untuk studi kasus ini
 - Field `kunjungan_unplanned` yang disebut di deskripsi field pada soal sengaja tidak dipakai — field ini tidak ada di dataset contoh dan tidak dibutuhkan rumus/tugas manapun
 
-## Live Demo
