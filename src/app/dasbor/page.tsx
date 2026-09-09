@@ -65,10 +65,13 @@ export default function HalamanDasbor() {
   if (!namaPengguna) return null;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans text-slate-900 dark:text-slate-100 selection:bg-blue-200 selection:text-blue-900">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/40 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-blue-950/30 font-sans text-slate-900 dark:text-slate-100 selection:bg-blue-200 selection:text-blue-900 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-100 h-100 bg-blue-400/10 dark:bg-blue-600/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-100 h-100 bg-indigo-400/10 dark:bg-indigo-600/10 blur-[100px] rounded-full pointer-events-none" />
+
       <HeaderDasbor namaPengguna={namaPengguna} onLogout={prosesLogout} />
 
-      <main className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-8 relative z-10">
         <KartuRingkasan
           totalKunjungan={metrik.totalKunjungan}
           rataEfektivitas={metrik.rataEfektivitas}
