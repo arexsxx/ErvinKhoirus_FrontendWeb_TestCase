@@ -6,7 +6,6 @@ interface PropsPeringatan {
 }
 
 export default function PeringatanError({ pesan }: PropsPeringatan) {
-  // Jika tidak ada pesan error, komponen tidak akan me-render apa pun (kosong)
   if (!pesan) return null;
 
   return (
