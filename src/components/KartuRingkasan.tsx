@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, CircleDollarSign } from "lucide-react";
 import { formatRupiah } from "@/lib/formatRupiah";
@@ -13,6 +16,8 @@ export default function KartuRingkasan({
   rataEfektivitas,
   totalOrder,
 }: PropsKartu) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
       {/* Kartu 1: Total Kunjungan */}
@@ -52,8 +57,12 @@ export default function KartuRingkasan({
         </CardContent>
       </Card>
 
-      {/* Kartu 3: Total Nilai Order */}
-      <Card className="border-0 shadow-sm shadow-slate-200/50 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-1.5 transition-all duration-300 bg-white dark:bg-slate-900 group rounded-[1.5rem]">
+      {/* Kartu 3: Total Nilai Order (Interaktif tanpa badge teks) */}
+      <Card 
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="border-0 shadow-sm shadow-slate-200/50 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-1.5 transition-all duration-300 bg-white dark:bg-slate-900 group rounded-[1.5rem] cursor-pointer select-none"
+        title="Klik untuk melihat nominal penuh"
+      >
         <CardContent className="p-5 sm:p-7 flex items-center gap-4 sm:gap-5">
           <div className="p-3.5 sm:p-4 bg-linear-to-br from-violet-500 to-violet-600 text-white rounded-[1rem] shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300 shrink-0">
             <CircleDollarSign
@@ -61,11 +70,17 @@ export default function KartuRingkasan({
               strokeWidth={2.5}
             />
           </div>
-          <div className="min-w-0 overflow-hidden">
+          <div className="min-w-0 overflow-hidden flex-1">
             <p className="text-xs sm:text-sm font-medium text-slate-500 mb-1 truncate">
               Total Nilai Order
             </p>
-            <h3 className="text-lg sm:text-xl xl:text-2xl font-extrabold tracking-tight text-slate-800 dark:text-slate-100 truncate">
+            <h3 
+              className={`font-extrabold tracking-tight text-slate-800 dark:text-slate-100 transition-all ${
+                isExpanded 
+                  ? "text-base sm:text-lg break-all" 
+                  : "text-lg sm:text-xl xl:text-2xl truncate"
+              }`}
+            >
               {formatRupiah(totalOrder)}
             </h3>
           </div>

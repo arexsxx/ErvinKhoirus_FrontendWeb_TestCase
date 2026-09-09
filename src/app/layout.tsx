@@ -12,6 +12,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Dashboard SAP | Distrilink",
   description: "Dashboard Analisa Performa Salesman",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
